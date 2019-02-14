@@ -4,14 +4,16 @@ using EFCoreCodeFirstSample.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCoreCodeFirstSample.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    partial class EmployeeContextModelSnapshot : ModelSnapshot
+    [Migration("20190214111918_prva")]
+    partial class prva
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,24 +68,6 @@ namespace EFCoreCodeFirstSample.Migrations
                             FirstName = "Gertrud",
                             LastName = "Seabrook",
                             PhoneNumber = "607-614-8672"
-                        },
-                        new
-                        {
-                            EmployeeId = 4L,
-                            DateOfBirth = new DateTime(1111, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "sofija@sofija.com",
-                            FirstName = "Sofija",
-                            LastName = "Vlahovic",
-                            PhoneNumber = "666-666-6666"
-                        },
-                        new
-                        {
-                            EmployeeId = 5L,
-                            DateOfBirth = new DateTime(1111, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "sofija@sofija.com",
-                            FirstName = "Sofija",
-                            LastName = "Vlahovic",
-                            PhoneNumber = "666-666-6666"
                         });
                 });
 #pragma warning restore 612, 618

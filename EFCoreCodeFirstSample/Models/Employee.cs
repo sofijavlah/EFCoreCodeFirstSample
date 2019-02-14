@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace EFCoreCodeFirstSample.Models
 {
@@ -15,7 +17,7 @@ namespace EFCoreCodeFirstSample.Models
         //with the auto-incremented identity.
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long EmployeeId { get; set; }
 
         public string FirstName { get; set; }
@@ -27,5 +29,17 @@ namespace EFCoreCodeFirstSample.Models
         public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
+
+       
+
+        public static List<Employee> Employees
+        {
+            get
+            {
+                var jsonLoad = File.ReadAllText("zaposleni.json");
+                var list = JsonConvert.DeserializeObject<List<Employee>>(jsonLoad);
+                return list;
+            }
+        }
     }
 }

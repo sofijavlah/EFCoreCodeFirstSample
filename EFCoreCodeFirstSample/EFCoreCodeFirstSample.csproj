@@ -6,9 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190214080910_izmenadatuma.cs" />
+    <Compile Remove="Migrations\20190214080910_izmenadatuma.Designer.cs" />
+    <Compile Remove="Migrations\20190214083534_prva.cs" />
+    <Compile Remove="Migrations\20190214083534_prva.Designer.cs" />
+    <Compile Remove="Migrations\20190214110043_addedNewEmployee.cs" />
+    <Compile Remove="Migrations\20190214110043_addedNewEmployee.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="zaposleni.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
