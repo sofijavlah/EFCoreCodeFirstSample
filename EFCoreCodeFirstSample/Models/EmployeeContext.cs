@@ -24,9 +24,7 @@ namespace EFCoreCodeFirstSample.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             
-
             var path = hostingEnvironment.ContentRootPath;
             var path1 = Path.Combine(path, "zaposleni.json");
 

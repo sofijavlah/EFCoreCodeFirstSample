@@ -17,7 +17,7 @@ namespace EFCoreCodeFirstSample.Models
         //with the auto-incremented identity.
 
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long EmployeeId { get; set; }
 
         public string FirstName { get; set; }
@@ -29,17 +29,15 @@ namespace EFCoreCodeFirstSample.Models
         public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
-
-       
-
-        public static List<Employee> Employees
-        {
-            get
-            {
-                var jsonLoad = File.ReadAllText("zaposleni.json");
-                var list = JsonConvert.DeserializeObject<List<Employee>>(jsonLoad);
-                return list;
-            }
-        }
+        
+        //public static List<Employee> Employees
+        //{
+        //    get
+        //    {
+        //        var jsonLoad = File.ReadAllText("zaposleni.json");
+        //        var list = JsonConvert.DeserializeObject<List<Employee>>(jsonLoad);
+        //        return list;
+        //    }
+        //}
     }
 }
